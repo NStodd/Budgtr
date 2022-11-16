@@ -23,12 +23,16 @@ app.get('/budgets', (req, res) => {
 
 // New Route
 app.get('/budgets/new', (req, res) => {
-    res.send("you are in the New Route")
+    res.render('budgt_new.ejs')
 })
 
 // Create Route
 app.post('/budgets', (req, res) => {
-    res.send("you are in the create route")
+    req.body.amount = parseInt(req.body.amount)
+    // TODO: put tag stuff here
+
+    console.log(req.body)
+    res.redirect("/budgets")
 })
 
 // Show Route
