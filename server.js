@@ -32,6 +32,7 @@ app.post('/budgets', (req, res) => {
     // TODO: put tag stuff here
 
     console.log(req.body)
+    budget.push(req.body)
     res.redirect("/budgets")
 })
 
